@@ -1,3 +1,4 @@
+# Forked: Fixed canvas responsive issue, replace visibility on canvas by display:"none"
 # react-particle-effect-button ([demo](https://transitive-bullshit.github.io/react-particle-effect-button/))
 
 > Bursting particle effect buttons for React.

@@ -165,6 +165,7 @@ export default class ParticleEffectButton extends Component {
     this._rect = this._wrapper.getBoundingClientRect()
     this._canvas.width = this._rect.width + canvasPadding * 2
     this._canvas.height = this._rect.height + canvasPadding * 2
+    this._canvas.style.display = "block"
     this._ctx = this._canvas.getContext('2d')
 
     anime({
