@@ -19,13 +19,13 @@ export default class ParticleEffectButton extends Component {
     children: PropTypes.node,
     className: PropTypes.string,
     duration: PropTypes.number,
-    easing: PropTypes.oneOfType([ PropTypes.string, PropTypes.arrayOf(PropTypes.number) ]),
-    type: PropTypes.oneOf([ 'circle', 'rectangle', 'triangle' ]),
-    style: PropTypes.oneOf([ 'fill', 'stroke' ]),
-    direction: PropTypes.oneOf([ 'left', 'right', 'top', 'bottom' ]),
+    easing: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.number)]),
+    type: PropTypes.oneOf(['circle', 'rectangle', 'triangle']),
+    style: PropTypes.oneOf(['fill', 'stroke']),
+    direction: PropTypes.oneOf(['left', 'right', 'top', 'bottom']),
     canvasPadding: PropTypes.number,
-    size: PropTypes.oneOfType([ PropTypes.number, PropTypes.func ]),
-    speed: PropTypes.oneOfType([ PropTypes.number, PropTypes.func ]),
+    size: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
+    speed: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
     color: PropTypes.string,
     particlesAmountCoefficient: PropTypes.number,
     oscillationCoefficient: PropTypes.number,
@@ -88,9 +88,9 @@ export default class ParticleEffectButton extends Component {
       progress
     } = this.state
 
-    const wrapperStyles = { }
-    const contentStyles = { }
-    const canvasStyles = { }
+    const wrapperStyles = {}
+    const contentStyles = {}
+    const canvasStyles = {}
 
     if (status === 'hiding' || status === 'showing') {
       const prop = this._isHorizontal() ? 'translateX' : 'translateY'
@@ -103,9 +103,9 @@ export default class ParticleEffectButton extends Component {
       contentStyles.transform = `${prop}(${-px}px)`
     } else if (status === 'hidden') {
       wrapperStyles.visibility = 'hidden'
-      canvasStyles.visibility = 'hidden'
+      canvasStyles.display = 'none'
     } else if (status === 'normal') {
-      canvasStyles.visibility = 'hidden'
+      canvasStyles.display = 'none'
     }
 
     return (
@@ -361,10 +361,10 @@ export default class ParticleEffectButton extends Component {
   }
 }
 
-function rand (value) {
+function rand(value) {
   return Math.random() * value - value / 2
 }
 
-function isFunc (value) {
+function isFunc(value) {
   return typeof value === 'function'
 }
